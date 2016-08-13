@@ -7,18 +7,20 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-	<header>
+	<header class="hero-unit">
 		<%= yield %>
 	</header>
-	<section id="jobseeker">
-		<h2>СОИСКАТЕЛЬ</h2>
-		<%= link_to "Sign up", '#', class: "btn btn-large btn-primary" %>
-	</section>
-	<section id="employer">
-		<h2>РОБОТОДАТЕЬ</h2>
-		<%= link_to "Sign up", '#', class: "btn btn-large btn-primary" %>
-	</section>
-	<section id="vacancies">
+	<div class="row">
+		<section class="col-xs-6">
+			<h2>СОИСКАТЕЛЬ</h2>
+			<%= link_to "Sign up", '#', class: "btn btn-large btn-primary" %>
+		</section>
+		<section class="col-xs-6">
+			<h2>РАБОТОДАТЕЬ</h2>
+			<%= link_to "Sign up", '#', class: "btn btn-large btn-primary" %>
+		</section>
+	</div>
+	<section class="container">
 		<p>Просмотр доступных вакансий</p>
 	</section>
 
