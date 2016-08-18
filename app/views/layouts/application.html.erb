@@ -8,22 +8,9 @@
 </head>
 <body>
 	<header class="hero-unit">
-		<%= yield %>
+		<h1>VACANCY</h1>
+		<p>Добро пожаловать на сайт поиска вакансий</p>
 	</header>
-	<div class="row">
-		<section class="col-xs-6">
-			<h2>СОИСКАТЕЛЬ</h2>
-			<%= link_to "Sign up", '#', class: "btn btn-large btn-primary" %>
-		</section>
-		<section class="col-xs-6">
-			<h2>РАБОТОДАТЕЬ</h2>
-			<%= link_to "Sign up", '#', class: "btn btn-large btn-primary" %>
-		</section>
-	</div>
-	<section class="container">
-		<p>Просмотр доступных вакансий</p>
-	</section>
-
-
+	<%= yield %>
 </body>
 </html>

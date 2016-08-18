@@ -1,0 +1,23 @@
+<h1>Редактирование компании</h1>
+
+<%= form_for :company, url: company_path(@company), method: :patch do |f| %>
+	<% if @company.errors.any? %>
+		<div id="error">
+			<h2>
+				 <%= pluralize(@company.errors.count, "error") %> Название не сохранено
+			</h2>
+			<ul>
+				<% @company.errors.full_message.each do |msg| %>
+				<li><%= msg %></li>
+				<% end %>
+			</ul>
+		</div>
+		<% end %>
+		<p>
+	      <%= f.label :title %><br>
+	      <%= f.text_field :title %>
+	    </p>
+	    <p>
+	      <%= f.submit %>
+	    </p>
+<% end %>
