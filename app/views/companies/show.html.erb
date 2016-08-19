@@ -1,4 +1,20 @@
 <p>
-  <strong>Title:</strong>
+  <h2>Company:</h2>
   <%= @company.title %>
 </p>
+
+<h2>Vacancies:</h2>
+<table>
+  <tr>
+    <th>Profession</th>
+    <th>Country</th>
+    <th>City</th>
+  </tr>
+  <%= @company.jobs.each do |job| %>
+    <tr>
+    <td><%= job.profession %></td> 
+    <td><%= job.country %></td> 
+    <td><%= job.city %></td>
+    </tr>
+   <% end %>
+</table>

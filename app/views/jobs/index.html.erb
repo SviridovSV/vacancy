@@ -1,0 +1,17 @@
+<h1>Listing vacancies</h1>
+ 
+<table>
+  <tr>
+    <th>Profession</th>
+    <th>Country</th>
+    <th>City</th>
+  </tr>
+ 
+  <% @jobs.each do |job| %>
+    <tr>
+      <td><%= job.profession %></td>
+      <td><%= job.country %></td>
+      <td><%= job.city %></td>
+     
+    </tr>
+  <% end %>
