@@ -10,7 +10,7 @@
     <th>Country</th>
     <th>City</th>
   </tr>
-  <%= @company.jobs.each do |job| %>
+  <%- @company.jobs.each do |job| %>
     <tr>
     <td><%= job.profession %></td> 
     <td><%= job.country %></td> 

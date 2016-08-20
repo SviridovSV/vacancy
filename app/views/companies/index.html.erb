@@ -1,11 +1,29 @@
 <h1>All companies</h1>
 
+<%= form_tag(companies_path, :method => 'get', id: 'search-form') do %>
+  <p>
+  	<%= text_field_tag :search, params[:search] %>
+  	<%= submit_tag "Search", :name => nil %>
+  </p>
+<% end %>
+<% if @companies.present? %>
+	<p>Есть
+	<%= render @companies %>
+	</p>
+<% else %>
+	<p>Нет совпадений <%= params[:search] %></p>
+<% end %>
+
+<%= will_paginate @company %>
+
 <ul>
 <% @company.each do |company| %>
   <li>
     <p><%= company.title %>
-       <%= link_to 'Show vacancies', company_path(company) %>
+       | <%= link_to 'Show vacancies', company_path(company) %>
     </p>
   </li>
 <% end %>
 </ul>
+
+<% will_paginate @company %>

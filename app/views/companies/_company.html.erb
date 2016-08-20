@@ -1,0 +1,9 @@
+<ul>
+<% @companies.each do |company| %>
+  <li>
+    <p><%= company.title %>
+       | <%= link_to 'Show vacancies', company_path(company) %>
+    </p>
+  </li>
+<% end %>
+</ul>

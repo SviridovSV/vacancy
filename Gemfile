@@ -5,6 +5,8 @@ source 'https://rubygems.org'
 gem 'rails', '4.2.5.1'
 # Use sqlite3 as the database for Active Record
 gem 'bootstrap-sass'
+gem 'will_paginate'
+gem 'bootstrap-will_paginate'
 gem 'sqlite3'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
@@ -36,11 +38,13 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 group :development, :test do
   gem 'sqlite3'
   gem 'rspec-rails'
+  
 end
 
 group :test do
 	gem 'selenium-webdriver'
 	gem 'capybara'
+
 end
 
 group :development do

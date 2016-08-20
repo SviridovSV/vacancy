@@ -1,6 +1,12 @@
 class CompaniesController < ApplicationController
   def index
-  	@company = Company.all 
+  	@company = Company.paginate(page: params[:page], per_page: 5) 
+    
+    if params[:search]
+      @companies = Company.search(params[:search]).order("created_at DESC")
+    else
+      @companies = Company.all.order('created_at DESC')
+    end
   end
 
   def show
