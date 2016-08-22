@@ -6,12 +6,16 @@
   	<%= submit_tag "Search", :name => nil %>
   </p>
 <% end %>
-<% if @companies.present? %>
+
+<% if @companies.present?  %>
 	<p>Есть
 	<%= render @companies %>
 	</p>
+<% elsif @jobs.present? %>
+  <%= render @jobs %>
 <% else %>
-	<p>Нет совпадений <%= params[:search] %></p>
+ 	<p>Нет совпадений <%= params[:search] %></p> 
+
 <% end %>
 
 <%= will_paginate @company %>
@@ -26,4 +30,4 @@
 <% end %>
 </ul>
 
-<% will_paginate @company %>
+<%= will_paginate @company %>

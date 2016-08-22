@@ -1,11 +1,18 @@
 class CompaniesController < ApplicationController
   def index
   	@company = Company.paginate(page: params[:page], per_page: 5) 
-    
+   
+
     if params[:search]
       @companies = Company.search(params[:search]).order("created_at DESC")
+    
+          
+      @jobs = Job.search(params[:search]).order("created_at DESC")
+
     else
       @companies = Company.all.order('created_at DESC')
+      @jobs = Job.all.order('created_at DESC')
+    
     end
   end
 
@@ -19,6 +26,7 @@ class CompaniesController < ApplicationController
 
   def edit
     @company = Company.find(params[:id])
+   
   end
 
   def create
